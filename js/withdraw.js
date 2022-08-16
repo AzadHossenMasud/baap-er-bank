@@ -6,15 +6,29 @@ btnWithdraw.addEventListener('click', function () {
     const withdrawAmount = document.getElementById('withdraw-amount')
     const withdrawAmountValue = withdrawAmount.innerText
 
-    const totalWithdraw = parseInt(withdrawAmountValue) + parseInt(withdraw)
-    withdrawAmount.innerText = totalWithdraw
+    let balanceAmount = document.getElementById('balance-amount')
+    let balance = balanceAmount.innerText
 
     withdrawField.value = ''
 
+    // if (typeof (parseInt(withdraw)) === 'number') {
+    //     alert('Please Type Valid Number');
+    //     return;
+    // }
+
+    if (parseInt(withdraw) > parseInt(balance)) {
+        alert('Insufficient Balance')
+        return;
+    }
+
+    const totalWithdraw = parseInt(withdrawAmountValue) + parseInt(withdraw)
+    withdrawAmount.innerText = totalWithdraw
+
+
+
     // balance
 
-    let balanceAmount = document.getElementById('balance-amount')
-    let balance = balanceAmount.innerText
+
 
     totalBalance = parseInt(balance) - parseInt(withdraw)
     balanceAmount.innerText = totalBalance

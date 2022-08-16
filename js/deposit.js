@@ -11,13 +11,20 @@ btnDeposit.addEventListener('click', function () {
     let depositAmount = document.getElementById('deposit-amount')
     let depositAmountValue = depositAmount.innerText
 
+    depositField.value = ''
+
+    // if (typeof (parseInt(deposit)) === 'number') {
+    //     alert('Please Type Valid Number');
+    //     return;
+    // }
+
 
     let totalDeposit = parseInt(depositAmountValue) + parseInt(deposit)
 
     depositAmount.innerText = totalDeposit
 
 
-    depositField.value = ''
+
 
     // balance
 
